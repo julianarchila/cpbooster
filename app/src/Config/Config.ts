@@ -31,12 +31,16 @@ export default class Config {
   ];
 
   contestsDirectory: string;
+  removeJudgeSubdomain: boolean;
+  judgeSubFolder: boolean;
+
   port: number;
   terminal: string | undefined | null;
   editor: string;
   closeAfterClone: boolean;
   showStatusPageOnSubmit: boolean;
   useUserDefaultBrowser: boolean;
+
   // preferred language extension
   preferredLang: string;
   hideTestCaseInput: boolean;
@@ -48,6 +52,8 @@ export default class Config {
 
   constructor() {
     this.contestsDirectory = Path.join(os.homedir(), "Contests");
+    this.removeJudgeSubdomain = false;
+    this.judgeSubFolder = true;
     this.port = 1327;
     this.editor = "konsole";
     this.closeAfterClone = false;
